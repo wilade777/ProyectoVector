@@ -1,0 +1,6 @@
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\bin\Debug\Proyector.Vector.Datos.dll
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\bin\Debug\Proyector.Vector.Datos.pdb
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\obj\Debug\Proyector.Vector.Datos.csproj.AssemblyReference.cache
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\obj\Debug\Proyector.Vector.Datos.csproj.CoreCompileInputs.cache
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\obj\Debug\Proyector.Vector.Datos.dll
+D:\clases UPDS\9 semestre\ingenieria de software II\Proyector.Vector.Presentacion\Proyector.Vector.Datos\obj\Debug\Proyector.Vector.Datos.pdb
