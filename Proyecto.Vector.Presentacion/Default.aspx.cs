@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Proyecto.Vector.Datos;
+using Proyecto.Vector.RN;
+using System;
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Proyecto.Vector.Datos;
-using Proyecto.Vector.RN;
 
 namespace Proyecto.Vector.Presentacion
 {
@@ -13,7 +13,7 @@ namespace Proyecto.Vector.Presentacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Reconstruir los TextBox dinámicos en cada postback
+            // Reconstruir TextBox dinámicos en postback
             if (IsPostBack && ViewState["VectorSize"] != null)
             {
                 int n = (int)ViewState["VectorSize"];
@@ -21,7 +21,6 @@ namespace Proyecto.Vector.Presentacion
             }
         }
 
-        // CA1 + CA2 + CA5: Solicitar tamaño y validar
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
             lblMensaje.Text = "";
@@ -37,14 +36,13 @@ namespace Proyecto.Vector.Presentacion
             // Guardar tamaño en ViewState
             ViewState["VectorSize"] = n;
 
-            // Generar TextBox dinámicos
+            // Crear TextBox dinámicos
             GenerarCampos(n);
 
             btnGuardar.Visible = true;
             lblMensaje.Text = $"Ingrese {n} números para el vector.";
         }
 
-        // Genera los campos dinámicos
         private void GenerarCampos(int n)
         {
             panelCampos.Controls.Clear();
@@ -57,7 +55,6 @@ namespace Proyecto.Vector.Presentacion
             }
         }
 
-        // CA3 + CA4: Guardar elementos en VectorDatos
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             if (ViewState["VectorSize"] == null) return;
@@ -76,13 +73,48 @@ namespace Proyecto.Vector.Presentacion
                 numeros.Add(valor);
             }
 
-            // Almacenar en VectorDatos
             VectorDatos vector = new VectorDatos(numeros.Count);
             negocio.Llenar(vector, numeros.ToArray());
 
-            // Mostrar resultado
             lblResultado.Text = $"({negocio.Mostrar(vector)})";
             lblMensaje.Text = $"Vector creado correctamente con {n} elementos.";
+        }
+
+        protected void btnCalcular_Click(object sender, EventArgs e)
+        {
+            if (ViewState["VectorSize"] == null)
+            {
+                lblEstadisticas.Text = "Error: No hay vector definido.";
+                return;
+            }
+
+            int n = (int)ViewState["VectorSize"];
+            List<int> numeros = new List<int>();
+
+            for (int i = 0; i < n; i++)
+            {
+                TextBox txt = (TextBox)panelCampos.FindControl("txtNum" + i);
+                if (txt == null || !int.TryParse(txt.Text.Trim(), out int valor))
+                {
+                    lblEstadisticas.Text = $"Error: el valor en la posición {i + 1} no es válido.";
+                    return;
+                }
+                numeros.Add(valor);
+            }
+
+            if (numeros.Count == 0)
+            {
+                lblEstadisticas.Text = "Error: El vector está vacío.";
+                return;
+            }
+
+            VectorDatos vector = new VectorDatos(numeros.Count);
+            negocio.Llenar(vector, numeros.ToArray());
+
+            double promedio = negocio.CalcularPromedio(vector);
+            double desviacion = numeros.Count > 1 ? negocio.CalcularDesviacion(vector) : 0;
+
+            lblEstadisticas.Text = $"Promedio: {promedio:F2} | Desviación estándar: {desviacion:F2}";
         }
     }
 }

@@ -16,11 +16,30 @@ namespace Proyecto.Vector.RN
             for (int i = 0; i < elementos.Length; i++)
                 vector.Elementos[i] = elementos[i];
         }
-
-        // Retorna el vector como string
+        // Llenar vector con los elementos dados
         public string Mostrar(VectorDatos vector)
         {
             return string.Join(", ", vector.Elementos);
+        }
+
+        // CA1: Calcular promedio
+        public double CalcularPromedio(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0)
+                throw new InvalidOperationException("El vector está vacío.");
+
+            return vector.Elementos.Average();
+        }
+
+        // CA2: Calcular desviación estándar muestral
+        public double CalcularDesviacion(VectorDatos vector)
+        {
+            if (vector.Elementos.Length < 2)
+                throw new InvalidOperationException("Se necesitan al menos 2 elementos para calcular la desviación.");
+
+            double media = CalcularPromedio(vector);
+            double sumaCuadrados = vector.Elementos.Sum(x => Math.Pow(x - media, 2));
+            return Math.Sqrt(sumaCuadrados / (vector.Elementos.Length - 1));
         }
     }
 }
