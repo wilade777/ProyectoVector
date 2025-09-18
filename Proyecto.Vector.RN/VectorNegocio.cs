@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 
+
 namespace Proyecto.Vector.RN
 {
     public class VectorNegocio

@@ -7,13 +7,18 @@ using Proyecto.Vector.RN;
 
 namespace Proyecto.Vector.Presentacion
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class _Default : Page
     {
         private VectorNegocio negocio = new VectorNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // No es necesario inicialización adicional
+            // Reconstruir los TextBox dinámicos en cada postback
+            if (IsPostBack && ViewState["VectorSize"] != null)
+            {
+                int n = (int)ViewState["VectorSize"];
+                GenerarCampos(n);
+            }
         }
 
         // CA1 + CA2 + CA5: Solicitar tamaño y validar
@@ -29,23 +34,35 @@ namespace Proyecto.Vector.Presentacion
                 return;
             }
 
-            // Crear N TextBox dinámicos dentro del Panel
-            for (int i = 0; i < n; i++)
-            {
-                TextBox txt = new TextBox { ID = "txtNum" + i };
-                txt.Attributes.Add("placeholder", $"Número {i + 1}"); // Placeholder en Web Forms
-                panelCampos.Controls.Add(txt);
-                panelCampos.Controls.Add(new LiteralControl("<br/>"));
-            }
+            // Guardar tamaño en ViewState
+            ViewState["VectorSize"] = n;
+
+            // Generar TextBox dinámicos
+            GenerarCampos(n);
 
             btnGuardar.Visible = true;
             lblMensaje.Text = $"Ingrese {n} números para el vector.";
         }
 
-        // CA3 + CA4: Guardar elementos en el vector
+        // Genera los campos dinámicos
+        private void GenerarCampos(int n)
+        {
+            panelCampos.Controls.Clear();
+            for (int i = 0; i < n; i++)
+            {
+                TextBox txt = new TextBox { ID = "txtNum" + i };
+                txt.Attributes.Add("placeholder", $"Número {i + 1}");
+                panelCampos.Controls.Add(txt);
+                panelCampos.Controls.Add(new LiteralControl("<br/>"));
+            }
+        }
+
+        // CA3 + CA4: Guardar elementos en VectorDatos
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            int n = panelCampos.Controls.Count / 2; // Cada TextBox + <br/>
+            if (ViewState["VectorSize"] == null) return;
+
+            int n = (int)ViewState["VectorSize"];
             List<int> numeros = new List<int>();
 
             for (int i = 0; i < n; i++)
@@ -59,7 +76,7 @@ namespace Proyecto.Vector.Presentacion
                 numeros.Add(valor);
             }
 
-            // Guardar en VectorDatos
+            // Almacenar en VectorDatos
             VectorDatos vector = new VectorDatos(numeros.Count);
             negocio.Llenar(vector, numeros.ToArray());
 
