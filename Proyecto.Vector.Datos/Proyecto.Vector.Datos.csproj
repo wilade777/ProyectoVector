@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76BACD72-923E-4EBD-83E6-847E1F421FA5}</ProjectGuid>
+    <ProjectGuid>{12F7642B-E10C-4206-914D-EE5221F89BD5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Proyecto.Vector.RN</RootNamespace>
-    <AssemblyName>Proyecto.Vector.RN</AssemblyName>
+    <RootNamespace>Proyecto.Vector.Datos</RootNamespace>
+    <AssemblyName>Proyecto.Vector.Datos</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VectorNegocio.cs" />
+    <Compile Include="VectorDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Proyecto.Vector.Datos\Proyecto.Vector.Datos.csproj">
-      <Project>{12f7642b-e10c-4206-914d-ee5221f89bd5}</Project>
-      <Name>Proyecto.Vector.Datos</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
