@@ -96,13 +96,13 @@ namespace Proyecto.Vector.Presentacion
         protected global::System.Web.UI.WebControls.Button btnMaxMin;
 
         /// <summary>
-        /// Control lblMaxMin.
+        /// Control btnPalindromo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMaxMin;
+        protected global::System.Web.UI.WebControls.Button btnPalindromo;
 
         /// <summary>
         /// Control lblEstadisticas.

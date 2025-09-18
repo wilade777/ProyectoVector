@@ -124,7 +124,7 @@ namespace Proyecto.Vector.Presentacion
         {
             if (ViewState["VectorSize"] == null)
             {
-                lblMaxMin.Text = "Error: No hay vector definido.";
+                lblEstadisticas.Text = "Error: No hay vector definido.";
                 return;
             }
 
@@ -136,7 +136,7 @@ namespace Proyecto.Vector.Presentacion
                 TextBox txt = (TextBox)panelCampos.FindControl("txtNum" + i);
                 if (txt == null || !int.TryParse(txt.Text.Trim(), out int valor))
                 {
-                    lblMaxMin.Text = $"Error: el valor en la posición {i + 1} no es válido.";
+                    lblEstadisticas.Text = $"Error: el valor en la posición {i + 1} no es válido.";
                     return;
                 }
                 numeros.Add(valor);
@@ -149,8 +149,42 @@ namespace Proyecto.Vector.Presentacion
             var (maxValor, maxPosiciones) = negocio.CalcularMaximo(vector);
             var (minValor, minPosiciones) = negocio.CalcularMinimo(vector);
 
-            lblMaxMin.Text = $"Máximo: {maxValor} | " + $"Mínimo: {minValor} ";
+            lblEstadisticas.Text = $"Máximo: {maxValor} | " + $"Mínimo: {minValor} ";
 
+        }
+        // Verificar Palíndromo
+        protected void btnPalindromo_Click(object sender, EventArgs e)
+        {
+            VectorDatos vector = RecuperarVector();
+            if (vector == null) return;
+
+            bool esPalindromo = negocio.EsPalindromo(vector);
+            lblEstadisticas.Text = esPalindromo
+                ? "✅ El vector es palíndromo."
+                : "❌ El vector NO es palíndromo.";
+        }
+        // Recuo+perar Vector
+        private VectorDatos RecuperarVector()
+        {
+            if (ViewState["VectorSize"] == null) return null;
+
+            int n = (int)ViewState["VectorSize"];
+            List<int> numeros = new List<int>();
+
+            for (int i = 0; i < n; i++)
+            {
+                TextBox txt = (TextBox)panelCampos.FindControl("txtNum" + i);
+                if (txt == null || !int.TryParse(txt.Text.Trim(), out int valor))
+                {
+                    lblEstadisticas.Text = $"Error: el valor en la posición {i + 1} no es válido.";
+                    return null;
+                }
+                numeros.Add(valor);
+            }
+
+            VectorDatos vector = new VectorDatos(numeros.Count);
+            negocio.Llenar(vector, numeros.ToArray());
+            return vector;
         }
 
     }

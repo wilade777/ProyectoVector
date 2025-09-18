@@ -28,14 +28,14 @@
 
          <!-- maximo y minimo -->
         <asp:Button ID="btnMaxMin" runat="server" Text="Máximo y Mínimo" OnClick="btnMaxMin_Click"  />
-        <asp:Label ID="lblMaxMin" runat="server" Text=""></asp:Label>
-
+        <!-- Palindromo -->
+        <asp:Button ID="btnPalindromo" runat="server" Text="Verificar Palíndromo" OnClick="btnPalindromo_Click" />
 
         <br /><br />
 
         <!-- Resultados -->
         <h3>Resultados:</h3>
         <asp:Label ID="lblEstadisticas" runat="server" Text=""></asp:Label>
-
+       
     </div>
 </asp:Content>
