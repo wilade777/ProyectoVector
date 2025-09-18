@@ -33,37 +33,11 @@
                 <asp:Button ID="btnCalcular" runat="server" Text="Calcular Promedio y Desviación" CssClass="btn btn-outline-primary" OnClick="btnCalcular_Click" />
                 <asp:Button ID="btnMaxMin" runat="server" Text="Máximo y Mínimo" CssClass="btn btn-outline-secondary" OnClick="btnMaxMin_Click" />
                 <asp:Button ID="btnPalindromo" runat="server" Text="Verificar Palíndromo" CssClass="btn btn-outline-warning" OnClick="btnPalindromo_Click" />
+            <asp:Button ID="btnSumaAcumulativa" runat="server" Text="Suma Acumulativa" CssClass="btn btn-outline-info" OnClick="btnSumaAcumulativa_Click" />
+                <asp:Button ID="btnFrecuencia" runat="server" Text="Frecuencia de Elementos" CssClass="btn btn-outline-dark" OnClick="btnFrecuencia_Click" />
             </div>
-
-            <!-- NUEVA SECCIÓN: Búsqueda de Subvector -->
-            <h5 class="text-secondary fw-bold">Búsqueda de Subvector:</h5>
-            <div class="mb-3">
-                <asp:Label ID="lblSubvectorSize" runat="server" Text="Tamaño del subvector B:" CssClass="form-label fw-semibold" />
-                <asp:TextBox ID="txtSubvectorSize" runat="server" CssClass="form-control" />
-            </div>
-            <div class="d-grid mb-3">
-                <asp:Button ID="btnGenerarSubvector" runat="server" Text="Generar Campos Subvector" CssClass="btn btn-info text-white" OnClick="btnGenerarSubvector_Click" />
-            </div>
-            <asp:Panel ID="panelSubvector" runat="server" CssClass="mb-3"></asp:Panel>
-            <div class="d-grid mb-4">
-                <asp:Button ID="btnBuscarSubvector" runat="server" Text="Buscar Subvector" CssClass="btn btn-dark" OnClick="btnBuscarSubvector_Click" />
-            </div>
-
-            <!-- NUEVA SECCIÓN: Producto Escalar -->
-            <h5 class="text-secondary fw-bold">Producto Escalar:</h5>
-            <div class="mb-3">
-                <asp:Label ID="lblVector2Size" runat="server" Text="Tamaño del vector 2:" CssClass="form-label fw-semibold" />
-                <asp:TextBox ID="txtVector2Size" runat="server" CssClass="form-control" />
-            </div>
-            <div class="d-grid mb-3">
-                <asp:Button ID="btnGenerarVector2" runat="server" Text="Generar Campos Vector 2" CssClass="btn btn-info text-white" OnClick="btnGenerarVector2_Click" />
-            </div>
-            <asp:Panel ID="panelVector2" runat="server" CssClass="mb-3"></asp:Panel>
-            <div class="d-grid mb-4">
-                <asp:Button ID="btnProductoEscalar" runat="server" Text="Calcular Producto Escalar" CssClass="btn btn-dark" OnClick="btnProductoEscalar_Click" />
-            </div>
-
-            <!-- Resultados -->
+                           
+             <!-- Resultados -->
             <h5 class="text-secondary fw-bold">Resultados:</h5>
             <div class="alert alert-info">
                 <asp:Label ID="lblEstadisticas" runat="server" Text=""></asp:Label>
