@@ -15,58 +15,22 @@ namespace Proyecto.Vector.Presentacion
     {
 
         /// <summary>
-        /// Control pnlDefinirTamano.
+        /// Control txtVector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDefinirTamano;
+        protected global::System.Web.UI.WebControls.TextBox txtVector;
 
         /// <summary>
-        /// Control txtTamano.
+        /// Control btnMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTamano;
-
-        /// <summary>
-        /// Control btnDefinirTamano.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDefinirTamano;
-
-        /// <summary>
-        /// Control pnlIngresarElementos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlIngresarElementos;
-
-        /// <summary>
-        /// Control txtElementos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtElementos;
-
-        /// <summary>
-        /// Control btnMostrarVector.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrarVector;
+        protected global::System.Web.UI.WebControls.Button btnMostrar;
 
         /// <summary>
         /// Control lblResultado.
