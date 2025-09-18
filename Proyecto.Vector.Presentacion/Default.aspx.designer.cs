@@ -87,6 +87,24 @@ namespace Proyecto.Vector.Presentacion
         protected global::System.Web.UI.WebControls.Button btnCalcular;
 
         /// <summary>
+        /// Control btnMaxMin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMaxMin;
+
+        /// <summary>
+        /// Control lblMaxMin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMaxMin;
+
+        /// <summary>
         /// Control lblEstadisticas.
         /// </summary>
         /// <remarks>

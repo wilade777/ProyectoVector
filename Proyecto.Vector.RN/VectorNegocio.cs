@@ -41,5 +41,35 @@ namespace Proyecto.Vector.RN
             double sumaCuadrados = vector.Elementos.Sum(x => Math.Pow(x - media, 2));
             return Math.Sqrt(sumaCuadrados / (vector.Elementos.Length - 1));
         }
+
+        // CA3: Valor máximo con posiciones
+        public (int valorMax, int[] posiciones) CalcularMaximo(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0)
+                throw new InvalidOperationException("El vector está vacío.");
+
+            int max = vector.Elementos.Max();
+            int[] posiciones = vector.Elementos
+                                     .Select((valor, indice) => new { valor, indice })
+                                     .Where(x => x.valor == max)
+                                     .Select(x => x.indice)
+                                     .ToArray();
+            return (max, posiciones);
+        }
+
+        // CA4: Valor mínimo con posiciones
+        public (int valorMin, int[] posiciones) CalcularMinimo(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0)
+                throw new InvalidOperationException("El vector está vacío.");
+
+            int min = vector.Elementos.Min();
+            int[] posiciones = vector.Elementos
+                                     .Select((valor, indice) => new { valor, indice })
+                                     .Where(x => x.valor == min)
+                                     .Select(x => x.indice)
+                                     .ToArray();
+            return (min, posiciones);
+        }
     }
 }

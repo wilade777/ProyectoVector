@@ -16,3 +16,12 @@ D:\Actividades\Proy\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.csproj.CoreC
 D:\Actividades\Proy\Proyecto.Vector.RN\obj\Debug\Proyecto.A85EF166.Up2Date
 D:\Actividades\Proy\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.dll
 D:\Actividades\Proy\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.pdb
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\bin\Debug\Proyecto.Vector.RN.dll
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\bin\Debug\Proyecto.Vector.RN.pdb
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\bin\Debug\Proyecto.Vector.Datos.dll
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\bin\Debug\Proyecto.Vector.Datos.pdb
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.csproj.AssemblyReference.cache
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.csproj.CoreCompileInputs.cache
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\obj\Debug\Proyecto.A85EF166.Up2Date
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.dll
+C:\Proyecto IS 2\Vectores\Proyecto.Vector.RN\obj\Debug\Proyecto.Vector.RN.pdb

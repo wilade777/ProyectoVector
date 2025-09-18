@@ -115,6 +115,43 @@ namespace Proyecto.Vector.Presentacion
             double desviacion = numeros.Count > 1 ? negocio.CalcularDesviacion(vector) : 0;
 
             lblEstadisticas.Text = $"Promedio: {promedio:F2} | Desviación estándar: {desviacion:F2}";
+
         }
+
+
+        // Boton de Maximo MInimo
+        protected void btnMaxMin_Click(object sender, EventArgs e)
+        {
+            if (ViewState["VectorSize"] == null)
+            {
+                lblMaxMin.Text = "Error: No hay vector definido.";
+                return;
+            }
+
+            int n = (int)ViewState["VectorSize"];
+            List<int> numeros = new List<int>();
+
+            for (int i = 0; i < n; i++)
+            {
+                TextBox txt = (TextBox)panelCampos.FindControl("txtNum" + i);
+                if (txt == null || !int.TryParse(txt.Text.Trim(), out int valor))
+                {
+                    lblMaxMin.Text = $"Error: el valor en la posición {i + 1} no es válido.";
+                    return;
+                }
+                numeros.Add(valor);
+            }
+
+            VectorDatos vector = new VectorDatos(numeros.Count);
+            negocio.Llenar(vector, numeros.ToArray());
+
+            // Obtener máximo y mínimo
+            var (maxValor, maxPosiciones) = negocio.CalcularMaximo(vector);
+            var (minValor, minPosiciones) = negocio.CalcularMinimo(vector);
+
+            lblMaxMin.Text = $"Máximo: {maxValor} | " + $"Mínimo: {minValor} ";
+
+        }
+
     }
 }
