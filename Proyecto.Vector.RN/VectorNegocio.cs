@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Proyecto.Vector.Datos;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Proyecto.Vector.Datos;
-
 
 namespace Proyecto.Vector.RN
 {
     public class VectorNegocio
     {
-        public void Llenar(VectorDatos v, int[] datos)
+        // Llenar vector con los elementos dados
+        public void Llenar(VectorDatos vector, int[] elementos)
         {
-            if (datos.Length != v.N)
-                throw new Exception($"El vector requiere {v.N} elementos, pero se recibieron {datos.Length}.");
+            if (elementos.Length != vector.Elementos.Length)
+                throw new ArgumentException("La cantidad de elementos no coincide con el tamaño del vector.");
 
-            v.Elementos = datos;
+            for (int i = 0; i < elementos.Length; i++)
+                vector.Elementos[i] = elementos[i];
         }
 
-        public string Mostrar(VectorDatos v)
+        // Retorna el vector como string
+        public string Mostrar(VectorDatos vector)
         {
-            return string.Join(", ", v.Elementos);
+            return string.Join(", ", vector.Elementos);
         }
-
     }
 }

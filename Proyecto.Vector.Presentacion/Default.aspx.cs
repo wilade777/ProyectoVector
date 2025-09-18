@@ -1,58 +1,71 @@
-﻿using Proyecto.Vector.Datos;
-using Proyecto.Vector.RN;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto.Vector.Datos;
+using Proyecto.Vector.RN;
 
 namespace Proyecto.Vector.Presentacion
 {
-    public partial class _Default : Page
+    public partial class _Default : System.Web.UI.Page
     {
         private VectorNegocio negocio = new VectorNegocio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Código de inicialización si es necesario
+            // No es necesario inicialización adicional
         }
 
-        protected void btnMostrar_Click(object sender, EventArgs e)
+        // CA1 + CA2 + CA5: Solicitar tamaño y validar
+        protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            try
+            lblMensaje.Text = "";
+            panelCampos.Controls.Clear();
+
+            if (!int.TryParse(txtN.Text.Trim(), out int n) || n <= 0)
             {
-                // 1. Leer la entrada del usuario
-                string input = txtVector.Text;
-
-                // 2. Parsear la cadena de texto a un arreglo de enteros
-                int[] elementos = input.Split(',')
-                                     .Select(s => int.Parse(s.Trim()))
-                                     .ToArray();
-
-                // 3. Crear una instancia del objeto de datos (VectorDatos)
-                VectorDatos vector = new VectorDatos(elementos.Length);
-
-                // 4. Usar la capa de negocio para llenar el vector
-                negocio.Llenar(vector, elementos);
-
-                // 5. Usar la capa de negocio para obtener la representación en texto
-                string resultado = negocio.Mostrar(vector);
-
-                // 6. Mostrar el resultado en la etiqueta
-                lblResultado.Text = $"({resultado})";
+                lblMensaje.Text = "Error: Debes ingresar un número entero positivo para el tamaño del vector.";
+                btnGuardar.Visible = false;
+                return;
             }
-            catch (FormatException)
+
+            // Crear N TextBox dinámicos dentro del Panel
+            for (int i = 0; i < n; i++)
             {
-                lblResultado.Text = "Error: El formato de entrada no es válido. Asegúrate de usar números separados por comas.";
+                TextBox txt = new TextBox { ID = "txtNum" + i };
+                txt.Attributes.Add("placeholder", $"Número {i + 1}"); // Placeholder en Web Forms
+                panelCampos.Controls.Add(txt);
+                panelCampos.Controls.Add(new LiteralControl("<br/>"));
             }
-            catch (Exception ex)
-            {
-                // Captura cualquier otra excepción (ej. si la capa de negocio lanza una excepción)
-                lblResultado.Text = $"Error: {ex.Message}";
-            }
+
+            btnGuardar.Visible = true;
+            lblMensaje.Text = $"Ingrese {n} números para el vector.";
         }
 
+        // CA3 + CA4: Guardar elementos en el vector
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int n = panelCampos.Controls.Count / 2; // Cada TextBox + <br/>
+            List<int> numeros = new List<int>();
 
+            for (int i = 0; i < n; i++)
+            {
+                TextBox txt = (TextBox)panelCampos.FindControl("txtNum" + i);
+                if (txt == null || !int.TryParse(txt.Text.Trim(), out int valor))
+                {
+                    lblMensaje.Text = $"Error: el valor en la posición {i + 1} no es válido.";
+                    return;
+                }
+                numeros.Add(valor);
+            }
+
+            // Guardar en VectorDatos
+            VectorDatos vector = new VectorDatos(numeros.Count);
+            negocio.Llenar(vector, numeros.ToArray());
+
+            // Mostrar resultado
+            lblResultado.Text = $"({negocio.Mostrar(vector)})";
+            lblMensaje.Text = $"Vector creado correctamente con {n} elementos.";
+        }
     }
 }
