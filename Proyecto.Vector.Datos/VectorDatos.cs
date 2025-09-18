@@ -8,13 +8,13 @@ namespace Proyecto.Vector.Datos
 {
     public class VectorDatos
     {
-        public int N { get; set; }
         public int[] Elementos { get; set; }
 
-        public VectorDatos(int n)
+        public VectorDatos(int tamaño)
         {
-            N = n;
-            Elementos = new int[N];
+            Elementos = new int[tamaño];
         }
     }
 }
+
+
