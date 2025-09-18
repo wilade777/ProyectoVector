@@ -10,3 +10,9 @@ D:\Actividades\Proy\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj
 D:\Actividades\Proy\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
 D:\Actividades\Proy\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
 D:\Actividades\Proy\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.dll
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.pdb
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.AssemblyReference.cache
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
+D:\proyecto\ProyectoVector - copia\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb

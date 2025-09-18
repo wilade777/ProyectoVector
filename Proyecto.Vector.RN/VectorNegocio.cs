@@ -22,6 +22,7 @@ namespace Proyecto.Vector.RN
             return string.Join(", ", vector.Elementos);
         }
 
+
         // Alexander: Calcular promedio
         public double CalcularPromedio(VectorDatos vector)
         {
@@ -86,7 +87,55 @@ namespace Proyecto.Vector.RN
 
             return true; // CA1 y CA3: es palíndromo
         }
+        // Michael: BuscarSubvector
+        public (bool encontrado, int posicion) BuscarSubvector(VectorDatos vectorA, VectorDatos vectorB)
+        {
+            if (vectorA.Elementos.Length == 0 || vectorB.Elementos.Length == 0)
+                throw new InvalidOperationException("Los vectores no pueden estar vacíos.");
 
+            if (vectorB.Elementos.Length > vectorA.Elementos.Length)
+                return (false, -1); // CA4: B más grande que A, no puede ser subvector
+
+            // CA2: Buscar primera aparición contigua de B en A
+            for (int i = 0; i <= vectorA.Elementos.Length - vectorB.Elementos.Length; i++)
+            {
+                bool coincide = true;
+                for (int j = 0; j < vectorB.Elementos.Length; j++)
+                {
+                    if (vectorA.Elementos[i + j] != vectorB.Elementos[j])
+                    {
+                        coincide = false;
+                        break;
+                    }
+                }
+
+                if (coincide)
+                    return (true, i); // CA3: Encontrado, retorna true y posición
+            }
+
+            return (false, -1); // CA4: No encontrado
+        }
+
+
+        // Michael: CalcularProductoEscalar
+        public int CalcularProductoEscalar(VectorDatos vector1, VectorDatos vector2)
+        {
+            // CA2 y CA5: Validar que tengan el mismo tamaño
+            if (vector1.Elementos.Length != vector2.Elementos.Length)
+                throw new ArgumentException("Error: Los vectores deben tener el mismo tamaño.");
+
+            if (vector1.Elementos.Length == 0)
+                throw new InvalidOperationException("Los vectores no pueden estar vacíos.");
+
+            // CA3: Calcular producto escalar
+            int producto = 0;
+            for (int i = 0; i < vector1.Elementos.Length; i++)
+            {
+                producto += vector1.Elementos[i] * vector2.Elementos[i];
+            }
+
+            return producto; // CA4: Retorna resultado
+        }
 
 
     }
