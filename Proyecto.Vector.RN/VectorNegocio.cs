@@ -214,7 +214,7 @@ namespace Proyecto.Vector.RN
             return new VectorDatos(vectorOrdenado);
         }
 
-        /*// --- Sprint 2: Transformación y Manipulación de Vectores ---
+        // --- Sprint 2: Transformación y Manipulación de Vectores ---
 
         // Rotación Circular
         public VectorDatos RotacionCircular(VectorDatos vector, int k)
@@ -275,42 +275,18 @@ namespace Proyecto.Vector.RN
             return new VectorDatos(nuevoVector);
         }
 
-        // Intercalar Vectores
-        public VectorDatos IntercalarVectores(VectorDatos vec1, VectorDatos vec2)
+
+        public bool EsPrimo(int numero)
         {
-            int n1 = vec1.Elementos.Length;
-            int n2 = vec2.Elementos.Length;
-            int n = n1 + n2;
+            if (numero <= 1) return false;
+            if (numero == 2) return true;
+            if (numero % 2 == 0) return false;
 
-            int[] nuevoVector = new int[n];
-            int i = 0, j = 0, k = 0;
-
-            while (i < n1 || j < n2)
+            for (int i = 3; i <= Math.Sqrt(numero); i += 2)
             {
-                if (i < n1)
-                {
-                    nuevoVector[k++] = vec1.Elementos[i++];
-                }
-                if (j < n2)
-                {
-                    nuevoVector[k++] = vec2.Elementos[j++];
-                }
+                if (numero % i == 0) return false;
             }
-            return new VectorDatos(nuevoVector);
-        }
-
-        // Fusión Ordenada
-        public VectorDatos FusionOrdenada(VectorDatos vec1, VectorDatos vec2)
-        {
-            if (vec1.Elementos.Length == 0) return vec2;
-            if (vec2.Elementos.Length == 0) return vec1;
-
-            var listaCombinada = new List<int>(vec1.Elementos.Length + vec2.Elementos.Length);
-            listaCombinada.AddRange(vec1.Elementos);
-            listaCombinada.AddRange(vec2.Elementos);
-
-            var vectorOrdenado = listaCombinada.OrderBy(e => e).ToArray();
-            return new VectorDatos(vectorOrdenado);
+            return true;
         }
 
         // Compactación por Condición
@@ -321,6 +297,6 @@ namespace Proyecto.Vector.RN
             var elementosCumplen = vector.Elementos.Where(condicion).ToArray();
             return new VectorDatos(elementosCumplen);
         }
-        */
+        
     }
 }
