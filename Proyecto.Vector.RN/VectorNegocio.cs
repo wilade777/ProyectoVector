@@ -125,7 +125,7 @@ namespace Proyecto.Vector.RN
             return frecuencias;
         }
 
-        // --- Operaciones con Dos Vectores ---
+        // --- sprint 2 Operaciones con Dos Vectores ---
 
         // Búsqueda de Subvector
         public (bool encontrado, int posicion) BuscarSubvector(VectorDatos vectorA, VectorDatos vectorB)
@@ -214,7 +214,7 @@ namespace Proyecto.Vector.RN
             return new VectorDatos(vectorOrdenado);
         }
 
-        // --- Sprint 2: Transformación y Manipulación de Vectores ---
+        // --- Sprint 3: Transformación y Manipulación de Vectores ---
 
         // Rotación Circular
         public VectorDatos RotacionCircular(VectorDatos vector, int k)
@@ -297,6 +297,10 @@ namespace Proyecto.Vector.RN
             var elementosCumplen = vector.Elementos.Where(condicion).ToArray();
             return new VectorDatos(elementosCumplen);
         }
-        
+
+        // --- Sprint 4: Analisis avnazado ---
+
+
+
     }
 }
