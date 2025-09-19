@@ -300,7 +300,184 @@ namespace Proyecto.Vector.RN
 
         // --- Sprint 4: Analisis avnazado ---
 
+        // Subvector creciente más largo
+        public int SubvectorCrecienteMasLargo(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0) return 0; // CA4: Vector vacío
 
+            if (vector.Elementos.Length == 1) return 1; // Un solo elemento
+
+            int longitudMaxima = 1;
+            int longitudActual = 1;
+
+            // CA1: Iterar a través del vector
+            for (int i = 1; i < vector.Elementos.Length; i++)
+            {
+                // Verificar si el elemento actual es mayor que el anterior
+                if (vector.Elementos[i] > vector.Elementos[i - 1])
+                {
+                    longitudActual++;
+                }
+                else
+                {
+                    // CA2: Actualizar la longitud máxima si es necesario
+                    if (longitudActual > longitudMaxima)
+                    {
+                        longitudMaxima = longitudActual;
+                    }
+                    longitudActual = 1; // Reiniciar contador
+                }
+            }
+
+            // Verificar una última vez por si la secuencia más larga está al final
+            if (longitudActual > longitudMaxima)
+            {
+                longitudMaxima = longitudActual;
+            }
+
+            // CA3: Retornar al menos 1 (cada elemento es una secuencia de longitud 1)
+            return longitudMaxima;
+        }
+
+        // Segundo valor mayor
+        public int SegundoValorMayor(VectorDatos vector)
+        {
+            if (vector.Elementos.Length < 2)
+                throw new InvalidOperationException("El vector debe tener al menos dos elementos.");
+
+            int max = int.MinValue;
+            int segundoMax = int.MinValue;
+
+            // CA1: Identificar máximo y segundo máximo en una sola pasada
+            foreach (int elemento in vector.Elementos)
+            {
+                if (elemento > max)
+                {
+                    segundoMax = max;
+                    max = elemento;
+                }
+                else if (elemento > segundoMax && elemento != max)
+                {
+                    segundoMax = elemento;
+                }
+            }
+
+            // CA4: Validar si hay suficientes elementos únicos
+            if (segundoMax == int.MinValue)
+                throw new InvalidOperationException("No hay un segundo valor mayor (todos los elementos son iguales).");
+
+            return segundoMax;
+        }
+
+        // Conteo de secuencias iguales
+        public int ConteoSecuenciasIguales(VectorDatos vector)
+        {
+            if (vector.Elementos.Length < 2) return 0; // Necesita al menos 2 elementos para una secuencia
+
+            int conteo = 0;
+            bool enSecuencia = false;
+
+            // CA1: Iterar sobre el vector
+            for (int i = 1; i < vector.Elementos.Length; i++)
+            {
+                // CA2: Identificar secuencias de elementos consecutivos idénticos
+                if (vector.Elementos[i] == vector.Elementos[i - 1])
+                {
+                    if (!enSecuencia)
+                    {
+                        // CA3: Contar cada secuencia (solo una vez por secuencia)
+                        conteo++;
+                        enSecuencia = true;
+                    }
+                }
+                else
+                {
+                    enSecuencia = false;
+                }
+            }
+
+            return conteo;
+        }
+
+        // Reemplazo por frecuencias
+        public VectorDatos ReemplazoPorFrecuencias(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0) return new VectorDatos(0);
+
+            // CA1: Contar la frecuencia de aparición de cada elemento
+            Dictionary<int, int> frecuencias = FrecuenciaElementos(vector);
+
+            // CA2: Crear un nuevo vector del mismo tamaño
+            VectorDatos resultado = new VectorDatos(vector.Elementos.Length);
+
+            // CA3: Para cada posición, insertar la frecuencia del elemento correspondiente
+            for (int i = 0; i < vector.Elementos.Length; i++)
+            {
+                resultado.Elementos[i] = frecuencias[vector.Elementos[i]];
+            }
+
+            return resultado;
+        }
+
+        // Balance positivo/negativo
+        public string BalancePositivoNegativo(VectorDatos vector)
+        {
+            if (vector.Elementos.Length == 0) return "Vector vacío";
+
+            int positivos = 0;
+            int negativos = 0;
+            int ceros = 0;
+
+            // CA1: Iterar y contar elementos positivos, negativos y ceros
+            foreach (int elemento in vector.Elementos)
+            {
+                if (elemento > 0) positivos++;
+                else if (elemento < 0) negativos++;
+                else ceros++;
+            }
+
+            // CA2: Mostrar conteos
+            string resultado = $"Positivos: {positivos}, Negativos: {negativos}, Ceros: {ceros}. ";
+
+            // CA3: Determinar si están balanceados
+            if (positivos == negativos)
+                resultado += "✅ Los positivos y negativos están balanceados.";
+            else
+                resultado += "❌ Los positivos y negativos NO están balanceados.";
+
+            return resultado;
+        }
+
+        // Mayor diferencia
+        public int MayorDiferencia(VectorDatos vector)
+        {
+            if (vector.Elementos.Length < 2)
+                throw new InvalidOperationException("El vector debe tener al menos dos elementos.");
+
+            int minHastaAhora = vector.Elementos[0];
+            int diferenciaMaxima = 0;
+
+            // CA1: Encontrar el valor mínimo hasta el momento
+            // CA2: Calcular diferencia entre elemento actual y mínimo
+            for (int i = 1; i < vector.Elementos.Length; i++)
+            {
+                if (vector.Elementos[i] < minHastaAhora)
+                {
+                    minHastaAhora = vector.Elementos[i];
+                }
+                else
+                {
+                    int diferencia = vector.Elementos[i] - minHastaAhora;
+                    // CA3: Mantener registro de la diferencia máxima
+                    if (diferencia > diferenciaMaxima)
+                    {
+                        diferenciaMaxima = diferencia;
+                    }
+                }
+            }
+
+            return diferenciaMaxima;
+        }
 
     }
 }
