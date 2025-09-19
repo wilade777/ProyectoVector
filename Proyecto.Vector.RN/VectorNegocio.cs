@@ -21,6 +21,9 @@ namespace Proyecto.Vector.RN
 
         public string Mostrar(VectorDatos vector)
         {
+            if (vector == null || vector.Elementos == null || vector.Elementos.Length == 0)
+                return "VECTOR VACÍO";
+
             return string.Join(", ", vector.Elementos);
         }
 
@@ -127,7 +130,8 @@ namespace Proyecto.Vector.RN
         // Búsqueda de Subvector
         public (bool encontrado, int posicion) BuscarSubvector(VectorDatos vectorA, VectorDatos vectorB)
         {
-            if (vectorA.Elementos.Length != 0 || vectorB.Elementos.Length != 0)
+            // CORRECCIÓN: Validar que los vectores no estén vacíos
+            if (vectorA.Elementos.Length == 0 || vectorB.Elementos.Length == 0)
             {
                 throw new InvalidOperationException("Los vectores no pueden estar vacíos.");
             }

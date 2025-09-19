@@ -22,3 +22,9 @@ D:\proyecto\ProyectoVector\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos
 D:\proyecto\ProyectoVector\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
 D:\proyecto\ProyectoVector\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
 D:\proyecto\ProyectoVector\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.dll
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.pdb
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.AssemblyReference.cache
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
+C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb

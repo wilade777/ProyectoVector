@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Proyecto.Vector.Datos
 {
@@ -20,13 +16,14 @@ namespace Proyecto.Vector.Datos
             Elementos = new int[tamaño];
         }
 
-        // NUEVO: Constructor que acepta array directamente
+        // Constructor que acepta array directamente
         public VectorDatos(int[] elementos)
         {
             if (elementos == null)
             {
-                throw new ArgumentNullException(nameof(elementos), "El Vector de elementos no puede ser nulo.");
+                throw new ArgumentNullException(nameof(elementos), "El array de elementos no puede ser nulo.");
             }
+            Elementos = elementos;
         }
     }
 }
