@@ -28,3 +28,9 @@ C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Da
 C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
 C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
 C:\ExamenIngenieria2\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.dll
+D:\proyecto\Vectores\Proyecto.Vector.Datos\bin\Debug\Proyecto.Vector.Datos.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.AssemblyReference.cache
+D:\proyecto\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.csproj.CoreCompileInputs.cache
+D:\proyecto\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.dll
+D:\proyecto\Vectores\Proyecto.Vector.Datos\obj\Debug\Proyecto.Vector.Datos.pdb

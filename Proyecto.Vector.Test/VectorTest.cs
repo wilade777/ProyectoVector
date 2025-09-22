@@ -194,5 +194,122 @@ namespace Proyecto.Vector.Tests
             var vector = new VectorDatos(new int[] { 1, 2, 3 });
             _negocio.InversionParcial(vector, 2, 1);
         }
+
+        // --- Test Sprint 4 ---
+
+        [TestMethod]
+        public void SubvectorCrecienteMasLargo_VectorConSecuencias_RetornaLongitudCorrecta()
+        {
+            
+            var vector = new VectorDatos(new int[] { 1, 2, 3, 1, 2, 3, 4, 5 });
+            int resultado = _negocio.SubvectorCrecienteMasLargo(vector);
+            Assert.AreEqual(5, resultado);
+        }
+
+        [TestMethod]
+        public void SubvectorCrecienteMasLargo_VectorVacio_RetornaCero()
+        {
+            
+            var vector = new VectorDatos(0);
+            int resultado = _negocio.SubvectorCrecienteMasLargo(vector);
+            Assert.AreEqual(0, resultado);
+        }
+
+        [TestMethod]
+        public void SegundoValorMayor_VectorConValoresUnicos_RetornaCorrecto()
+        {
+            var vector = new VectorDatos(new int[] { 10, 20, 30, 40 });
+            int resultado = _negocio.SegundoValorMayor(vector);
+            Assert.AreEqual(30, resultado);
+        }
+
+        [TestMethod]
+        public void SegundoValorMayor_VectorConDuplicados_RetornaCorrecto()
+        {
+            var vector = new VectorDatos(new int[] { 40, 40, 20, 30 });
+            int resultado = _negocio.SegundoValorMayor(vector);
+            Assert.AreEqual(30, resultado);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void SegundoValorMayor_VectorConMenosDeDosElementos_LanzaExcepcion()
+        {
+            var vector = new VectorDatos(new int[] { 5 });
+            _negocio.SegundoValorMayor(vector);
+           
+        }
+
+        [TestMethod]
+        public void ConteoSecuenciasIguales_VariasSecuencias_RetornaConteoCorrecto()
+        {
+            var vector = new VectorDatos(new int[] { 1, 1, 2, 3, 3, 3, 4, 4, 5 });
+            int resultado = _negocio.ConteoSecuenciasIguales(vector);
+            Assert.AreEqual(3, resultado);
+        }
+
+        [TestMethod]
+        public void ConteoSecuenciasIguales_SinSecuencias_RetornaCero()
+        {
+            var vector = new VectorDatos(new int[] { 1, 2, 3, 4, 5 });
+            int resultado = _negocio.ConteoSecuenciasIguales(vector);
+            Assert.AreEqual(0, resultado);
+        }
+
+        [TestMethod]
+        public void ReemplazoPorFrecuencias_VectorValido_RetornaVectorCorrecto()
+        {
+            // Arrange
+            var vector = new VectorDatos(new int[] { 1, 2, 2, 3, 1, 4 });
+            // Act
+            var resultado = _negocio.ReemplazoPorFrecuencias(vector);
+            // Assert
+            CollectionAssert.AreEqual(new int[] { 2, 2, 2, 1, 2, 1 }, resultado.Elementos);
+        }
+
+        [TestMethod]
+        public void BalancePositivoNegativo_VectorBalanceado_RetornaBalanceado()
+        {
+            // Arrange
+            var vector = new VectorDatos(new int[] { 10, -5, 2, -2 });
+            // Act
+            string resultado = _negocio.BalancePositivoNegativo(vector);
+            // Assert
+            StringAssert.Contains(resultado, "balanceados");
+        }
+
+        [TestMethod]
+        public void BalancePositivoNegativo_VectorNoBalanceado_RetornaNoBalanceado()
+        {
+            // Arrange
+            var vector = new VectorDatos(new int[] { 10, -5, 2, -2, 5 });
+            // Act
+            string resultado = _negocio.BalancePositivoNegativo(vector);
+            // Assert
+            StringAssert.Contains(resultado, "NO están balanceados");
+        }
+
+        [TestMethod]
+        public void MayorDiferencia_CasoNormal_RetornaDiferenciaCorrecta()
+        {
+            // Arrange
+            var vector = new VectorDatos(new int[] { 2, 3, 10, 6, 4, 8, 1 });
+            // Act
+            int resultado = _negocio.MayorDiferencia(vector);
+            // Assert
+            // La mayor diferencia es entre 10 y el mínimo hasta ese punto, que es 2.
+            Assert.AreEqual(8, resultado);
+        }
+
+        [TestMethod]
+        public void MayorDiferencia_CasoDecreciente_RetornaCero()
+        {
+            // Arrange
+            var vector = new VectorDatos(new int[] { 10, 8, 5, 2 });
+            // Act
+            int resultado = _negocio.MayorDiferencia(vector);
+            // Assert
+            Assert.AreEqual(0, resultado);
+        }
     }
 }

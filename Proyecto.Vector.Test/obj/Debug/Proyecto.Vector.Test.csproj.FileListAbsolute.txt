@@ -23,3 +23,28 @@ C:\Proyecto IS 2\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.cs
 C:\Proyecto IS 2\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.014BA14F.Up2Date
 C:\Proyecto IS 2\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.dll
 C:\Proyecto IS 2\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.TestPlatform.AdapterUtilities.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.Test.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.Test.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.Datos.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.RN.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.Datos.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Proyecto.Vector.RN.pdb
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\proyecto\Vectores\Proyecto.Vector.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\proyecto\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.csproj.AssemblyReference.cache
+D:\proyecto\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.csproj.CoreCompileInputs.cache
+D:\proyecto\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.014BA14F.Up2Date
+D:\proyecto\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.dll
+D:\proyecto\Vectores\Proyecto.Vector.Test\obj\Debug\Proyecto.Vector.Test.pdb
