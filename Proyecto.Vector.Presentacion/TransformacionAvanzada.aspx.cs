@@ -22,13 +22,14 @@ namespace Proyecto.Vector.Presentacion
             if (Session["VectorPrincipal"] == null)
             {
                 lblVectorA.Text = "No hay un vector principal cargado. Por favor, defina y guarde un vector en la página principal para continuar.";
+                lblVectorResultante.Text = "No hay resultado disponible";
                 DeshabilitarOperaciones();
             }
             else
             {
                 VectorDatos vectorA = (VectorDatos)Session["VectorPrincipal"];
                 lblVectorA.Text = $"({negocio.Mostrar(vectorA)})";
-                lblVectorResultante.Text = $"({negocio.Mostrar(vectorA)})";
+                lblVectorResultante.Text = "El resultado aparecerá aquí después de realizar una operación"; // Mensaje inicial
             }
         }
 
@@ -47,9 +48,9 @@ namespace Proyecto.Vector.Presentacion
             lblResultados.Text = $"✅ {operacion} realizado correctamente.";
             lblVectorResultante.Text = $"({negocio.Mostrar(resultado)})";
 
-            // Opcional: guardar el resultado como nuevo vector principal
-            Session["VectorPrincipal"] = resultado;
-            lblVectorA.Text = $"({negocio.Mostrar(resultado)})";
+            // Mantener el vector original visible
+            VectorDatos vectorA = (VectorDatos)Session["VectorPrincipal"];
+            lblVectorA.Text = $"({negocio.Mostrar(vectorA)})";
         }
 
         // Rotación Circular
